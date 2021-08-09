@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.only('basic test', async ({ page }) => {
+test('basic test', async ({ page }) => {
   
   await page.goto('https://duckduckgo.com/?va=b&t=hc');
   const ducklogo = await page.isVisible('#logo_homepage_link');
@@ -41,7 +41,7 @@ test('www.wikipedia.com test', async ({ page }) => {
 
 });
 
-test('testing wiki short link', async ({ page }) => {
+test.only('testing wiki short link', async ({ page }) => {
   await page.goto('https://duckduckgo.com/');
   await page.waitForSelector('#logo_homepage_link');
   await page.fill('#search_form_input_homepage', 'shorten www.wikipedia.com');
